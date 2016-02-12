@@ -26,7 +26,52 @@ if led_choice == 1:
     while count > 0:
         GPIO.output(7,GPIO.HIGH)
         time.sleep(1)
+        GPIO.output(7,GPIO.LOW)
+        time.sleep(1)
         count = count - 1
+
+if led_choice == 2:
+    os.system('clear')
+    print "You choose the green LED"
+    count = input("How many times you want it to blink?: ")
+    while count > 0:
+        GPIO.output(11,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(11,GPIO.LOW)
+        time.sleep(1)
+        count = count - 1
+
+if led_choice == 3:
+    os.system('clear')
+    print "You choose the yellow LED"
+    count = input("How many times you want it to blink?: ")
+    while count > 0:
+        GPIO.output(13,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(13,GPIO.LOW)
+        count = count - 1
+
+if led_choice == 4:
+    os.system('clear')
+    print "You choose all LEDs"
+    count = input("How many times you want them all to blink?: ")
+    while count > 0:
+        GPIO.output(7,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(7,GPIO.LOW)
+
+        GPIO.output(11,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(11,GPIO.LOW)
+
+        GPIO.output(13,GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(13,GPIO.LOW)
+
+        count = count - 1
+
+
+GPIO.cleanup()
 
 
     
