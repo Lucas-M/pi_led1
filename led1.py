@@ -1,11 +1,14 @@
-import os
-import time
-import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BOARD)
+import os                       # what is this?
+import time			# why import this?
+import RPi.GPIO as GPIO		# Import lib to interface with GPIO pin on rpi2
+
+GPIO.setmode(GPIO.BOARD)    	# Is this needed to access GPIO?
 GPIO.setwarnings(False)
+				# Prepare the pins	
 GPIO.setup(7,GPIO.OUT)
 GPIO.setup(11,GPIO.OUT)
 GPIO.setup(13,GPIO.OUT)
+
 # Setup variables for user input
 led_choice = 0
 count = 0
@@ -17,7 +20,7 @@ print "!: Red?"
 print "2: Green?"
 print "3: Yellow?"
 print "4: All?"
-led_choice = inp9ut("Make your choice: ")
+led_choice = input("Make your choice: ")
 
 if led_choice == 1:
     os.system('clear')
@@ -49,6 +52,7 @@ if led_choice == 3:
         GPIO.output(13,GPIO.HIGH)
         time.sleep(1)
         GPIO.output(13,GPIO.LOW)
+        time.sleep(1)
         count = count - 1
 
 if led_choice == 4:
@@ -69,7 +73,6 @@ if led_choice == 4:
         GPIO.output(13,GPIO.LOW)
 
         count = count - 1
-
 
 GPIO.cleanup()
 
