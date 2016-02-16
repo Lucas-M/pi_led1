@@ -1,9 +1,9 @@
 #!/usr/bin/python/
-import os                       # what is this?
-import time			# why import this?
+import os                   # what is this?
+import time                 # why import this?
 import RPi.GPIO as GPIO		# Import lib to interface with GPIO pin on rpi2
 
-GPIO.setmode(GPIO.BOARD)    	# Is this needed to access GPIO?
+GPIO.setmode(GPIO.BOARD)    # Is this needed to access GPIO?
 GPIO.setwarnings(False)
 				# Prepare the pins	
 GPIO.setup(7,GPIO.OUT)
